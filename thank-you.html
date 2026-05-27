@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome — NBA AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --dark: #0a0a0f;
+    --accent: #00e5a0;
+    --white: #ffffff;
+    --white-70: rgba(255,255,255,0.7);
+    --white-40: rgba(255,255,255,0.4);
+    --border: rgba(255,255,255,0.08);
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 520px; }
+  .icon {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: rgba(0,229,160,0.12);
+    border: 1px solid rgba(0,229,160,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 2rem;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  h1 span { color: var(--accent); }
+  p {
+    color: var(--white-70);
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  a {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,229,160,0.3);
+    padding-bottom: 2px;
+  }
+  a:hover { border-color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="icon">✓</div>
+  <h1>You're <span>in.</span></h1>
+  <p>Welcome to NBA AI. You'll receive a confirmation email shortly with everything you need to get started. We'll be in touch to complete your setup.</p>
+  <a href="/">Back to home</a>
+</div>
+</body>
+</html>
