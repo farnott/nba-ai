@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Try Mandy for £1 — NBA AI Founding Member Trial</title>
+<meta name="description" content="Start your first month with Mandy for just £1 + VAT. Founding Member pricing for the first 50 businesses. No contracts, cancel anytime.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nba-ai.co.uk/trial.html">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --dark: #0a0a0f;
+    --dark-2: #12121a;
+    --dark-3: #1a1a26;
+    --accent: #86c440;
+    --accent-dim: rgba(134, 196, 64, 0.12);
+    --accent-mid: rgba(134, 196, 64, 0.25);
+    --white: #ffffff;
+    --white-70: rgba(255,255,255,0.7);
+    --white-40: rgba(255,255,255,0.4);
+    --border: rgba(255,255,255,0.08);
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2.5rem;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent);
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.55rem 1.25rem;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* HERO */
+  .trial-hero {
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 9rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .trial-hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(134,196,64,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-mid);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  h1 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--white-70);
+    font-weight: 300;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* MAIN CONTENT */
+  .trial-content {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  /* PRICING CARD */
+  .pricing-card {
+    background: var(--dark-2);
+    border: 1px solid var(--accent-mid);
+    border-radius: 24px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .pricing-card::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(134,196,64,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .pricing-badge {
+    display: inline-block;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-mid);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .pricing-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .pricing-trial {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+  }
+  .pricing-then {
+    font-size: 0.95rem;
+    color: var(--white-40);
+    font-weight: 300;
+  }
+  .pricing-then strong { color: var(--white-70); }
+  .pricing-note {
+    color: var(--white-40);
+    font-size: 0.85rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+  }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--white-70);
+    line-height: 1.5;
+  }
+  .checklist li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  /* QUOTE */
+  .quote-block {
+    background: var(--dark-3);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .quote-block p {
+    font-size: 1.05rem;
+    color: var(--white-70);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.7;
+  }
+  .quote-block p strong {
+    color: var(--white);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* CTA */
+  .btn-full {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--accent);
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 1.1rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    font-family: var(--font);
+  }
+  .btn-full:hover { transform: translateY(-2px); opacity: 0.9; }
+  .cta-sub {
+    text-align: center;
+    color: var(--white-40);
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    font-weight: 300;
+  }
+  .cta-sub a { color: var(--white-40); text-decoration: none; }
+  .cta-sub a:hover { color: var(--white-70); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem;
+    text-align: center;
+    color: var(--white-40);
+    font-size: 0.85rem;
+    font-weight: 300;
+  }
+  footer a { color: var(--white-40); text-decoration: none; }
+  footer a:hover { color: var(--white-70); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1rem 1.25rem; }
+    .trial-hero { padding: 7rem 1.25rem 3rem; }
+    .trial-content { padding: 0 1.25rem 4rem; }
+    .pricing-card { padding: 1.75rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">NBA<span>·</span>AI</a>
+  <a href="/demo.html" class="nav-cta">Watch the demo</a>
+</nav>
+
+<div class="trial-hero">
+  <div class="eyebrow">Founding Member — First 50 Only</div>
+  <h1>Try Mandy<br>for <em>£1</em></h1>
+  <p class="hero-sub">Founding Member pricing reserved for the first 50 businesses. Your first month is just £1 + VAT.</p>
+</div>
+
+<div class="trial-content">
+
+  <div class="pricing-card">
+    <div class="pricing-badge">Founding Member Price</div>
+    <div class="pricing-amount">
+      <span class="pricing-trial">£1</span>
+      <span class="pricing-then">first month + VAT, then <strong>£59 + VAT/month</strong></span>
+    </div>
+    <p class="pricing-note">No contracts. No sales meetings. Cancel anytime.</p>
+    <ul class="checklist">
+      <li>Secure one of the 50 Founding Member places</li>
+      <li>Usually set up by the next business day</li>
+      <li>Forward your calls to Mandy</li>
+      <li>See how she handles real enquiries for your business</li>
+      <li>Continue at £59 + VAT per month as a Founding Member</li>
+    </ul>
+    <a href="#" class="btn-full" onclick="startCheckout(event)">Start my £1 trial</a>
+    <p class="cta-sub">Secure checkout via Stripe · <a href="/fair-use.html">Fair Use Policy</a></p>
+  </div>
+
+  <div class="quote-block">
+    <p>The best way to find out whether Mandy is right for your business is to let her answer real calls.<br><br><strong>That's what the £1 first month is for.</strong></p>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Northumberland Business Automation · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/fair-use.html">Fair Use</a></p>
+</footer>
+
+<script>
+async function startCheckout(e) {
+  e.preventDefault();
+  const btn = e.currentTarget;
+  const original = btn.textContent;
+  btn.textContent = 'Loading...';
+  btn.style.opacity = '0.7';
+  btn.style.pointerEvents = 'none';
+
+  try {
+    const res = await fetch('https://young-scene-81d8.flemming-654.workers.dev/', {
+      method: 'POST',
+    });
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert('Something went wrong. Please try again.');
+      btn.textContent = original;
+      btn.style.opacity = '';
+      btn.style.pointerEvents = '';
+    }
+  } catch (err) {
+    alert('Something went wrong. Please try again.');
+    btn.textContent = original;
+    btn.style.opacity = '';
+    btn.style.pointerEvents = '';
+  }
+}
+</script>
+
+<script>
+(function() {
+  var consent = localStorage.getItem('cookie_consent');
+  if (consent === 'accepted') {
+    var s = document.createElement('script');
+    s.src = 'https://beta.leadconnectorhq.com/loader.js';
+    s.setAttribute('data-resources-url', 'https://beta.leadconnectorhq.com/chat-widget/loader.js');
+    s.setAttribute('data-widget-id', '6a18972196c166bea69d04c4');
+    s.async = true;
+    s.defer = true;
+    document.body.appendChild(s);
+  }
+})();
+</script>
+
+</body>
+</html>

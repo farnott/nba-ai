@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Install Your AI Chat Widget — NBA AI</title>
+<meta name="description" content="Step-by-step instructions to install your NBA AI chat widget on your website.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">NBA<span>·</span>AI</a>
+  <a href="mailto:support@nba-ai.co.uk" class="nav-cta">Get help</a>
+</nav>
+<div class="page-content install">
+  <p class="page-eyebrow">Getting started</p>
+  <h1>Install Your AI Chat Widget</h1>
+  <div class="step">
+    <div class="step-number">1</div>
+    <div class="step-body">
+      <h2>Find your unique widget ID</h2>
+      <p>We sent your unique widget ID in your welcome email. It's a long string of letters and numbers that looks like this: <strong>a1b2c3d4e5f6g7h8i9j0k1l2</strong></p>
+      <p>Can't find it? Email us at <a href="mailto:support@nba-ai.co.uk">support@nba-ai.co.uk</a> and we'll resend it.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-number">2</div>
+    <div class="step-body">
+      <h2>Copy the code below</h2>
+      <p>Click <strong>Copy</strong> to copy the code snippet, then replace <strong style="color:#ff9f7f;">XXXXXXXXXXXXXXXXXXXXXXXX</strong> with your unique widget ID from your welcome email.</p>
+      <div class="code-block">
+        <pre>&lt;script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="<span class="placeholder">XXXXXXXXXXXXXXXXXXXXXXXX</span>"&gt;&lt;/script&gt;</pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-number">3</div>
+    <div class="step-body">
+      <h2>Paste the code into your website</h2>
+      <p>Open your website's HTML and paste the completed code just before the closing <strong>&lt;/body&gt;</strong> tag. It should look like this:</p>
+      <div class="code-block">
+        <pre>    ...your website content...
+
+    &lt;script src="https://beta.leadconnectorhq.com/loader.js" ...&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+      <p style="margin-top:0.75rem;">If you're using a website builder like WordPress, Squarespace, or Wix, look for a <strong>"Custom Code"</strong> or <strong>"Footer Code"</strong> setting — paste it there.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-number">4</div>
+    <div class="step-body">
+      <h2>Check it's working</h2>
+      <p>Visit your website and look for the chat bubble in the bottom corner of the screen. Click it to make sure it opens correctly.</p>
+      <p>It may take a few minutes to appear after saving your changes.</p>
+    </div>
+  </div>
+  <div class="help-box">
+    <p><strong>Need help installing?</strong></p>
+    <p>If you're not sure how to edit your website's code, your web developer or website platform's support team will be able to help. Just share this page with them and they'll know what to do.</p>
+    <p>Or contact us at <a href="mailto:support@nba-ai.co.uk">support@nba-ai.co.uk</a> and we'll do our best to help.</p>
+  </div>
+</div>
+<footer>
+  <p>&copy; 2026 Northumberland Business Automation · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a></p>
+</footer>
+<script>
+function copyCode(btn) {
+  const code = '<script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="XXXXXXXXXXXXXXXXXXXXXXXX"><\/script>';
+  navigator.clipboard.writeText(code).then(function() {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(function() {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+</body>
+</html>

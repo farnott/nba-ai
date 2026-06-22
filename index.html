@@ -25,6 +25,9 @@
 <meta name="geo.region" content="GB-NBL">
 <meta name="geo.placename" content="Northumberland">
 
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="shortcut icon" href="/favicon.ico">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -32,9 +35,9 @@
     --dark: #0a0a0f;
     --dark-2: #12121a;
     --dark-3: #1a1a26;
-    --accent: #00e5a0;
-    --accent-dim: rgba(0, 229, 160, 0.12);
-    --accent-mid: rgba(0, 229, 160, 0.25);
+    --accent: #86c440;
+    --accent-dim: rgba(134, 196, 64, 0.12);
+    --accent-mid: rgba(134, 196, 64, 0.25);
     --white: #ffffff;
     --white-70: rgba(255,255,255,0.7);
     --white-40: rgba(255,255,255,0.4);
@@ -111,7 +114,7 @@
     transform: translateX(-50%);
     width: 800px;
     height: 800px;
-    background: radial-gradient(circle, rgba(0,229,160,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(134,196,64,0.08) 0%, transparent 70%);
     pointer-events: none;
   }
   .hero-eyebrow {
@@ -119,7 +122,7 @@
     align-items: center;
     gap: 0.5rem;
     background: var(--accent-dim);
-    border: 1px solid rgba(0,229,160,0.25);
+    border: 1px solid rgba(134,196,64,0.25);
     color: var(--accent);
     font-size: 0.8rem;
     font-weight: 500;
@@ -297,7 +300,7 @@
     padding: 1.75rem;
     transition: border-color 0.2s;
   }
-  .solution-card:hover { border-color: rgba(0,229,160,0.3); }
+  .solution-card:hover { border-color: rgba(134,196,64,0.3); }
   .solution-card-icon {
     width: 40px; height: 40px;
     border-radius: 10px;
@@ -348,7 +351,7 @@
   }
   .who-tag:hover {
     background: var(--accent-dim);
-    border-color: rgba(0,229,160,0.3);
+    border-color: rgba(134,196,64,0.3);
     color: var(--accent);
   }
   .who-sting {
@@ -405,7 +408,7 @@
   .pricing-section { border-top: 1px solid var(--border); }
   .pricing-card {
     background: var(--dark-2);
-    border: 1px solid rgba(0,229,160,0.25);
+    border: 1px solid rgba(134,196,64,0.25);
     border-radius: 24px;
     padding: 3rem;
     max-width: 560px;
@@ -418,13 +421,13 @@
     position: absolute;
     top: -60px; right: -60px;
     width: 200px; height: 200px;
-    background: radial-gradient(circle, rgba(0,229,160,0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(134,196,64,0.06) 0%, transparent 70%);
     pointer-events: none;
   }
   .pricing-badge {
     display: inline-block;
     background: var(--accent-dim);
-    border: 1px solid rgba(0,229,160,0.3);
+    border: 1px solid rgba(134,196,64,0.3);
     color: var(--accent);
     font-size: 0.75rem;
     font-weight: 500;
@@ -582,7 +585,7 @@
     "@type": "Offer",
     "price": "1.00",
     "priceCurrency": "GBP",
-    "description": "First month trial, then £139/month"
+    "description": "First month trial, then £59/month + VAT"
   }
 }
 </script>
@@ -590,20 +593,44 @@
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">NBA<span>·</span>AI</a>
+  <a href="/" class="nav-logo">NBA<span>·</span>AI</a>
   <a href="#trial" class="nav-cta">Start for £1</a>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">AI Receptionist for Local Business</div>
-  <h1>Missed Calls.<br>Rushed Answers.<br><em>Lost Business.</em><br>Not Anymore.</h1>
+  <div style="margin-bottom:2rem;">
+    <p style="font-size:0.85rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#ffffff;text-align:center;margin-bottom:1rem;">Meet:</p>
+    <img src="/mandy-logo-transparent.png" alt="Mandy" style="width:640px;max-width:90%;height:auto;display:block;margin:0 auto 1.5rem;">
+    <p style="font-size:1.5rem;font-weight:700;color:var(--white);text-align:center;letter-spacing:0.01em;line-height: 1.1;">She loves answering<br />the phone.</p>
+  </div>
+  <!-- <div class="hero-eyebrow">AI Receptionist for Local Business</div> -->
+  <!-- <h1>Missed Calls.<br>Rushed Answers.<br><em>Lost Business.</em><br>Not Anymore.</h1> -->
   <p class="hero-sub">Every enquiry handled professionally, even when you're busy.</p>
   <div class="hero-actions">
     <a href="#" class="btn-primary" onclick="startCheckout(event)">Start for just £1 today</a>
-    <a href="#demo" class="hero-scroll">See it in action</a>
   </div>
+  <p style="margin-top:1.25rem;font-size:1.1rem;font-weight:600;color:var(--white);text-align:center;">Mandy is your new AI receptionist.</p>
 </div>
+
+<!-- DEMO — moved up below hero -->
+<section class="demo-section" id="demo" style="padding-top: 2rem;">
+  <p class="section-label">Hear It For Yourself</p>
+  <h2>This is a real call.<br>Handled by Mandy.</h2>
+  <p class="section-intro">Hear exactly what your customers would experience.</p>
+  <div class="demo-player">
+    <div class="demo-player-header">
+      <div class="demo-dot"></div>
+      <span class="demo-label"><strong>Live call recording</strong> — inbound enquiry</span>
+    </div>
+    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1196394272?dnt=1&badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="nba-terry"></iframe></div>
+    <script src="https://player.vimeo.com/api/player.js" defer></script>
+  </div>
+  <div style="margin-top:2rem;padding:1.5rem 2rem;background:var(--accent-dim);border:1px solid rgba(134,196,64,0.25);border-radius:12px;text-align:center;">
+    <p style="font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;">Try It Yourself</p>
+    <p style="font-size:1.15rem;color:var(--white);font-weight:300;">📞 Call <a href="tel:01670333374" style="color:var(--accent);font-weight:600;text-decoration:none;">01670 333 374</a> and put it to the test.</p>
+  </div>
+</section>
 
 <!-- PROBLEM -->
 <section class="problem-section">
@@ -628,7 +655,7 @@
 <section class="solution-section">
   <p class="section-label">The Solution</p>
   <h2>Every call answered.<br>Every opportunity captured.</h2>
-  <p class="section-intro">Your AI receptionist handles every call professionally, captures every enquiry, and delivers the details straight to you.</p>
+  <p class="section-intro">Mandy handles every call professionally, captures every enquiry, and delivers the details straight to you.</p>
   <div class="solution-grid">
     <div class="solution-card">
       <div class="solution-card-icon">📞</div>
@@ -658,7 +685,65 @@
     <div class="solution-card">
       <div class="solution-card-icon">💻</div>
       <h3>Website chat included</h3>
-      <p>An AI chat assistant handles website enquiries with the same professionalism.</p>
+      <p>Mandy handles website enquiries with the same professionalism.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL EXAMPLE -->
+<section style="padding:5rem 1.5rem;background:var(--dark-2);">
+  <div style="max-width:640px;margin:0 auto;">
+    <p class="section-label">See It In Action</p>
+    <h2 style="font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem;">Example of the email you'll receive</h2>
+    <p style="color:var(--white-70);margin-bottom:2.5rem;font-size:1rem;">Every time Mandy handles a call or chat, you get an instant summary straight to your inbox.</p>
+
+    <!-- Email mockup — light theme -->
+    <div style="border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.4);text-align:left;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+
+      <!-- Window chrome -->
+      <div style="background:#e8e8e8;padding:0.75rem 1.25rem;display:flex;align-items:center;gap:0.6rem;">
+        <div style="width:12px;height:12px;border-radius:50%;background:#ff5f57;"></div>
+        <div style="width:12px;height:12px;border-radius:50%;background:#febc2e;"></div>
+        <div style="width:12px;height:12px;border-radius:50%;background:#28c840;"></div>
+        <div style="flex:1;background:#ffffff;border-radius:6px;padding:0.25rem 0.75rem;margin-left:0.5rem;font-size:0.75rem;color:#888;">📧 &nbsp;New enquiry captured by Mandy</div>
+      </div>
+
+      <!-- Email header -->
+      <div style="background:#f5f5f5;padding:1rem 1.5rem;border-bottom:1px solid #e0e0e0;">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#86c440;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85rem;color:#fff;flex-shrink:0;">M</div>
+          <div>
+            <p style="font-size:0.85rem;font-weight:600;color:#1a1a1a;margin:0;">Mandy · NBA AI</p>
+            <p style="font-size:0.75rem;color:#888;margin:0;">to me</p>
+          </div>
+        </div>
+        <p style="font-size:1rem;font-weight:700;color:#1a1a1a;margin:0;">New enquiry captured by Mandy</p>
+      </div>
+
+      <!-- Email body -->
+      <div style="background:#ffffff;padding:1.75rem 2rem;">
+        <p style="color:#333;margin-bottom:1.25rem;font-size:0.95rem;line-height:1.6;">Mandy has handled another call for your business! Call details below:</p>
+
+        <div style="background:#f9f9f9;border:1px solid #e8e8e8;border-radius:10px;padding:1.25rem;margin-bottom:1.25rem;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+            <tr>
+              <td style="color:#888;padding:0.4rem 0;width:40%;">Caller's Number</td>
+              <td style="color:#1a1a1a;padding:0.4rem 0;font-weight:500;">+44 7700 900123</td>
+            </tr>
+            <tr>
+              <td style="color:#888;padding:0.4rem 0;">Number Called</td>
+              <td style="color:#1a1a1a;padding:0.4rem 0;font-weight:500;">Your Business Number</td>
+            </tr>
+            <tr>
+              <td style="color:#888;padding:0.4rem 0;">Call Duration</td>
+              <td style="color:#1a1a1a;padding:0.4rem 0;font-weight:500;">84 seconds</td>
+            </tr>
+          </table>
+        </div>
+
+        <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:#aaa;margin-bottom:0.75rem;">Call Summary</p>
+        <p style="color:#444;font-size:0.95rem;line-height:1.7;background:#f9f9f9;border:1px solid #e8e8e8;border-left:3px solid #86c440;border-radius:0 10px 10px 0;padding:1.25rem;margin:0;">Sheila is looking for a quote to install two additional sockets and replace an outdoor security light. She mentioned the work isn't urgent and asked if someone could call her back after 4:00pm today.<br><br>The call ended with Sheila thanking Mandy for her help.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -673,29 +758,18 @@
     <span class="who-tag">Hair & Beauty</span>
     <span class="who-tag">Personal Trainers</span>
     <span class="who-tag">Driving Instructors</span>
+    <span class="who-tag">Car Valeters</span>
     <span class="who-tag">Electricians</span>
     <span class="who-tag">Plumbers</span>
     <span class="who-tag">Mechanics</span>
     <span class="who-tag">Gardeners</span>
+    <span class="who-tag">Decorators</span>
+    <span class="who-tag">Tilers</span>
+    <span class="who-tag">Roofers</span>
+    <span class="who-tag">Caterers</span>
+
   </div>
   <p class="who-sting">If your phone rings while you're working, this is for you.</p>
-</section>
-
-<!-- DEMO -->
-<section class="demo-section" id="demo">
-  <p class="section-label">Hear It For Yourself</p>
-  <h2>This is a real call.<br>Handled by AI.</h2>
-  <p class="section-intro">See exactly what your customers would experience.</p>
-  <div class="demo-player">
-    <div class="demo-player-header">
-      <div class="demo-dot"></div>
-      <span class="demo-label"><strong>Live call recording</strong> — inbound enquiry</span>
-    </div>
-    <div class="demo-placeholder">
-      <div class="demo-placeholder-icon">▶</div>
-      <p>Your demo video goes here</p>
-    </div>
-  </div>
 </section>
 
 <!-- PRICING / TRIAL -->
@@ -703,24 +777,26 @@
   <p class="section-label">Get Started</p>
   <h2>One extra job pays for six months.</h2>
   <div class="pricing-card">
-    <div class="pricing-badge">Limited Availability</div>
+    <div class="pricing-badge">Limited Availability — First 50 Customers Only</div>
     <div class="pricing-amount">
       <span class="pricing-trial">£1</span>
-      <span class="pricing-then">first month, then <strong>£139/month</strong></span>
+      <span class="pricing-then">first month, then <strong>£59/month + VAT</strong></span>
     </div>
     <p class="pricing-note">No contracts. Cancel anytime.</p>
     <ul class="pricing-features">
       <li>AI Phone Answering</li>
+      <li>Unlimited Agent Minutes*</li>
       <li>Website Chat Assistant</li>
       <li>Instant Lead Notifications</li>
       <li>Setup & Configuration</li>
       <li>Priority Support</li>
     </ul>
     <div class="pricing-guarantee">
-      <strong>Our promise:</strong> If you don't think it's won you at least one extra job this month, cancel. No hard feelings.
+      <strong>Risk free:</strong> Try it for £1. If it's not working for you, cancel anytime — no questions asked.
     </div>
     <a href="#" class="btn-full" onclick="startCheckout(event)">Start for just £1 today</a>
     <p class="pricing-sub">Secure checkout via Stripe · Cancel anytime</p>
+    <p class="pricing-sub">* Subject to <a href="/fair-use.html" style="color:var(--white-40);">Fair Use Policy</a></p>
   </div>
 </section>
 
@@ -731,25 +807,49 @@
   <div class="faq-list">
     <div class="faq-item">
       <p class="faq-q">Does it replace my phone?</p>
-      <p class="faq-a">No. Calls are simply forwarded when you want the AI to answer. You stay in control.</p>
+      <p class="faq-a">No. Calls are simply forwarded when you want Mandy to answer. You stay in control.</p>
     </div>
     <div class="faq-item">
       <p class="faq-q">Can I still answer calls myself?</p>
-      <p class="faq-a">Yes — if you're free, answer as normal. The AI only kicks in when you don't.</p>
+      <p class="faq-a">Absolutely. If you're free, answer as normal. Mandy only steps in when you can't.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">What happens after a call?</p>
-      <p class="faq-a">You receive the caller's details and enquiry information immediately, so you can follow up when you're ready.</p>
+      <p class="faq-q">I already have voicemail. Why is this different?</p>
+      <p class="faq-a">Voicemail takes messages… if people bother to leave one. Mandy answers the call immediately, has a natural conversation, gathers the information you need, and makes sure potential customers don't slip away.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">How do I get the details from the call?</p>
+      <p class="faq-a">As soon as the call ends, you'll receive the caller's details and a summary of what they needed. No listening to voicemails or scribbling down messages… just the important information, ready when you are.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Do I need a computer?</p>
+      <p class="faq-a">No. If you can use a mobile phone, you're all set. Most customers simply receive the enquiry details and carry on with their day.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">My spouse answers the phone when I can't. Why would I need this?</p>
+      <p class="faq-a">Lots of businesses rely on family members to help out, and that's absolutely fine. Mandy simply makes sure every call is answered consistently… even when everyone's busy, out shopping, enjoying dinner, or taking a well-earned break.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Do I have to set it up myself?</p>
+      <p class="faq-a">No. We handle the entire setup for you and make sure everything is working properly before you start using it.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Do I need any software?</p>
+      <p class="faq-a">No software to install and nothing complicated to learn. Mandy works with your existing phone number.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">How long does setup take?</p>
+      <p class="faq-a">Usually within one business day. We'll configure everything for you and send your dedicated AI number as soon as your account is ready.</p>
     </div>
     <div class="faq-item">
       <p class="faq-q">What if I want to cancel?</p>
-      <p class="faq-a">Cancel anytime before your next billing date. No contracts, no questions asked.</p>
+      <p class="faq-a">Cancel anytime before your next billing date. No contracts, no awkward conversations, and no questions asked.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2026 Northumberland Business Automation · <a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
+  <p>&copy; 2026 Northumberland Business Automation · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/fair-use.html">Fair Use</a></p>
 </footer>
 
 <script>
@@ -762,7 +862,7 @@ async function startCheckout(e) {
   btn.style.pointerEvents = 'none';
 
   try {
-    const res = await fetch('/api/create-checkout', {
+    const res = await fetch('https://young-scene-81d8.flemming-654.workers.dev/', {
       method: 'POST',
     });
     const data = await res.json();
@@ -781,6 +881,60 @@ async function startCheckout(e) {
     btn.style.pointerEvents = '';
   }
 }
+</script>
+<script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a18972196c166bea69d04c4" async defer></script>
+</script>
+
+<!-- COOKIE CONSENT -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#12121a;border-top:1px solid rgba(255,255,255,0.08);padding:1.25rem 5rem 1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
+  <p style="margin:0;font-size:0.9rem;color:rgba(255,255,255,0.7);flex:1;min-width:200px;">We use cookies to power our live chat and improve your experience. See our <a href="/privacy.html" style="color:#86c440;text-decoration:none;">Privacy Policy</a>.</p>
+  <div style="display:flex;gap:0.75rem;flex-shrink:0;">
+    <button onclick="setCookieConsent(false)" style="background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);font-size:0.85rem;padding:0.5rem 1.25rem;border-radius:100px;cursor:pointer;transition:all 0.2s;">Reject</button>
+    <button onclick="setCookieConsent(true)" style="background:#86c440;border:none;color:#0a0a0f;font-size:0.85rem;font-weight:600;padding:0.5rem 1.25rem;border-radius:100px;cursor:pointer;transition:opacity 0.2s;">Accept</button>
+  </div>
+</div>
+
+<script>
+function loadChatWidget() {
+  var s = document.createElement('script');
+  s.src = 'https://beta.leadconnectorhq.com/loader.js';
+  s.setAttribute('data-resources-url', 'https://beta.leadconnectorhq.com/chat-widget/loader.js');
+  s.setAttribute('data-widget-id', '6a18972196c166bea69d04c4');
+  s.async = true;
+  s.defer = true;
+  document.body.appendChild(s);
+}
+
+function loadAnalytics() {
+  var s = document.createElement('script');
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-F7VH44D1MG';
+  s.async = true;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-F7VH44D1MG');
+}
+
+function setCookieConsent(accepted) {
+  localStorage.setItem('cookie_consent', accepted ? 'accepted' : 'rejected');
+  document.getElementById('cookie-banner').style.display = 'none';
+  if (accepted) {
+    setTimeout(loadChatWidget, 5000);
+    loadAnalytics();
+  }
+}
+
+(function() {
+  var consent = localStorage.getItem('cookie_consent');
+  if (!consent) {
+    document.getElementById('cookie-banner').style.display = 'flex';
+  } else if (consent === 'accepted') {
+    setTimeout(loadChatWidget, 5000);
+    loadAnalytics();
+  }
+})();
 </script>
 </body>
 </html>
