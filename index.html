@@ -589,6 +589,31 @@
   }
 }
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7VH44D1MG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied'
+});
+
+gtag('js', new Date());
+gtag('config', 'G-F7VH44D1MG');
+//gtag('config', 'AW-XXXXXXXXX');  // your Google Ads ID
+
+if (localStorage.getItem('cookie_consent') === 'accepted') {
+  gtag('consent', 'update', {
+    ad_storage: 'granted',
+    ad_user_data: 'granted',
+    ad_personalization: 'granted',
+    analytics_storage: 'granted'
+  });
+}
+</script>
 </head>
 <body>
 
@@ -882,8 +907,6 @@ async function startCheckout(e) {
   }
 }
 </script>
-<script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a18972196c166bea69d04c4" async defer></script>
-</script>
 
 <!-- COOKIE CONSENT -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#12121a;border-top:1px solid rgba(255,255,255,0.08);padding:1.25rem 5rem 1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
@@ -905,24 +928,17 @@ function loadChatWidget() {
   document.body.appendChild(s);
 }
 
-function loadAnalytics() {
-  var s = document.createElement('script');
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-F7VH44D1MG';
-  s.async = true;
-  document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag;
-  gtag('js', new Date());
-  gtag('config', 'G-F7VH44D1MG');
-}
-
 function setCookieConsent(accepted) {
   localStorage.setItem('cookie_consent', accepted ? 'accepted' : 'rejected');
   document.getElementById('cookie-banner').style.display = 'none';
   if (accepted) {
     setTimeout(loadChatWidget, 5000);
-    loadAnalytics();
+    gtag('consent', 'update', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
   }
 }
 
@@ -932,7 +948,6 @@ function setCookieConsent(accepted) {
     document.getElementById('cookie-banner').style.display = 'flex';
   } else if (consent === 'accepted') {
     setTimeout(loadChatWidget, 5000);
-    loadAnalytics();
   }
 })();
 </script>

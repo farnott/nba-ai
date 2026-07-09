@@ -65,6 +65,31 @@
   }
   a:hover { border-color: var(--accent); }
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7VH44D1MG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied'
+});
+
+gtag('js', new Date());
+gtag('config', 'G-F7VH44D1MG');
+gtag('config', 'AW-18257259487');  // your Google Ads ID
+
+if (localStorage.getItem('cookie_consent') === 'accepted') {
+  gtag('consent', 'update', {
+    ad_storage: 'granted',
+    ad_user_data: 'granted',
+    ad_personalization: 'granted',
+    analytics_storage: 'granted'
+  });
+}
+</script>
 </head>
 <body>
 <div class="container">
@@ -74,30 +99,21 @@
   <a href="/">Back to home</a>
 </div>
 <script>
-function loadAnalytics() {
-  var s = document.createElement('script');
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-F7VH44D1MG';
-  s.async = true;
-  document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag;
-  gtag('js', new Date());
-  gtag('config', 'G-F7VH44D1MG');
+var sessionId = new URLSearchParams(location.search).get('session_id') || undefined;
 
-  // Fire the conversion event — this is the whole point of tracking this page
-  gtag('event', 'purchase', {
-    currency: 'GBP',
-    value: 1.00,
-    transaction_id: new URLSearchParams(location.search).get('session_id') || undefined
-  });
-}
+gtag('event', 'purchase', {
+  currency: 'GBP',
+  value: 1.00,
+  transaction_id: sessionId
+});
 
-(function() {
-  if (localStorage.getItem('cookie_consent') === 'accepted') {
-    loadAnalytics();
-  }
-})();
+// Uncomment when you have your Ads ID + label:
+// gtag('event', 'conversion', {
+//   send_to: 'AW-XXXXXXXXX/YYYYYYYYYYY',
+//   currency: 'GBP',
+//   value: 1.00,
+//   transaction_id: sessionId
+// });
 </script>
 </body>
 </html>
