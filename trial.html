@@ -296,6 +296,31 @@
     .pricing-card { padding: 1.75rem 1.5rem; }
   }
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7VH44D1MG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied'
+});
+
+gtag('js', new Date());
+gtag('config', 'G-F7VH44D1MG');
+gtag('config', 'AW-18257259487');  // your Google Ads ID
+
+if (localStorage.getItem('cookie_consent') === 'accepted') {
+  gtag('consent', 'update', {
+    ad_storage: 'granted',
+    ad_user_data: 'granted',
+    ad_personalization: 'granted',
+    analytics_storage: 'granted'
+  });
+}
+</script>
 </head>
 <body>
 
@@ -350,7 +375,7 @@ async function startCheckout(e) {
   btn.style.pointerEvents = 'none';
 
   try {
-    const res = await fetch('https://young-scene-81d8.flemming-654.workers.dev/', {
+    const res = await fetch('https://nba-ai-checkout.flemming-654.workers.dev/', {
       method: 'POST',
     });
     const data = await res.json();
@@ -372,16 +397,21 @@ async function startCheckout(e) {
 </script>
 
 <script>
+function setCookieConsent(accepted) {
+  localStorage.setItem('cookie_consent', accepted ? 'accepted' : 'rejected');
+  document.getElementById('cookie-banner').style.display = 'none';
+  if (accepted) {
+    gtag('consent', 'update', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+  }
+}
 (function() {
-  var consent = localStorage.getItem('cookie_consent');
-  if (consent === 'accepted') {
-    var s = document.createElement('script');
-    s.src = 'https://beta.leadconnectorhq.com/loader.js';
-    s.setAttribute('data-resources-url', 'https://beta.leadconnectorhq.com/chat-widget/loader.js');
-    s.setAttribute('data-widget-id', '6a18972196c166bea69d04c4');
-    s.async = true;
-    s.defer = true;
-    document.body.appendChild(s);
+  if (!localStorage.getItem('cookie_consent')) {
+    document.getElementById('cookie-banner').style.display = 'flex';
   }
 })();
 </script>
