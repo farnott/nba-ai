@@ -65,6 +65,8 @@
   }
   a:hover { border-color: var(--accent); }
 </style>
+
+<!-- ===== BLOCK 1: consent + tag setup (head) ===== -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F7VH44D1MG"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -77,18 +79,21 @@ gtag('consent', 'default', {
   analytics_storage: 'denied'
 });
 
-gtag('js', new Date());
-gtag('config', 'G-F7VH44D1MG');
-gtag('config', 'AW-18257259487');  // your Google Ads ID
+// consent update must come BEFORE config, and must not throw
+try {
+  if (localStorage.getItem('cookie_consent') === 'accepted') {
+    gtag('consent', 'update', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+  }
+} catch (e) {}
 
-if (localStorage.getItem('cookie_consent') === 'accepted') {
-  gtag('consent', 'update', {
-    ad_storage: 'granted',
-    ad_user_data: 'granted',
-    ad_personalization: 'granted',
-    analytics_storage: 'granted'
-  });
-}
+gtag('js', new Date());
+gtag('config', 'G-F7VH44D1MG');   // GA4
+gtag('config', 'AW-18257259487'); // Google Ads
 </script>
 </head>
 <body>
@@ -98,22 +103,27 @@ if (localStorage.getItem('cookie_consent') === 'accepted') {
   <p>Welcome to NBA AI. You'll receive a confirmation email shortly with everything you need to get started. We'll be in touch to complete your setup.</p>
   <a href="/">Back to home</a>
 </div>
+
+<!-- ===== BLOCK 2: conversion events (end of body) ===== -->
 <script>
-var sessionId = new URLSearchParams(location.search).get('session_id') || undefined;
+var sessionId = new URLSearchParams(location.search).get('session_id');
 
-gtag('event', 'purchase', {
-  currency: 'GBP',
-  value: 1.00,
-  transaction_id: sessionId
-});
+if (sessionId) {
+  // GA4 ecommerce
+  gtag('event', 'purchase', {
+    currency: 'GBP',
+    value: 1.00,
+    transaction_id: sessionId
+  });
 
-// Uncomment when you have your Ads ID + label:
-// gtag('event', 'conversion', {
-//   send_to: 'AW-XXXXXXXXX/YYYYYYYYYYY',
-//   currency: 'GBP',
-//   value: 1.00,
-//   transaction_id: sessionId
-// });
+  // Google Ads Sign-up conversion
+  gtag('event', 'conversion', {
+    send_to: 'AW-18257259487/uSYACP37ztMcEN_X3oFE',
+    currency: 'GBP',
+    value: 1.00,
+    transaction_id: sessionId
+  });
+}
 </script>
 </body>
 </html>

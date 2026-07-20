@@ -909,7 +909,7 @@ async function startCheckout(e) {
 </script>
 
 <!-- COOKIE CONSENT -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#12121a;border-top:1px solid rgba(255,255,255,0.08);padding:1.25rem 5rem 1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#12121a;border-top:1px solid rgba(255,255,255,0.08);padding:1.25rem 5rem 1.25rem 2rem;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
   <p style="margin:0;font-size:0.9rem;color:rgba(255,255,255,0.7);flex:1;min-width:200px;">We use cookies to power our live chat and improve your experience. See our <a href="/privacy.html" style="color:#86c440;text-decoration:none;">Privacy Policy</a>.</p>
   <div style="display:flex;gap:0.75rem;flex-shrink:0;">
     <button onclick="setCookieConsent(false)" style="background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);font-size:0.85rem;padding:0.5rem 1.25rem;border-radius:100px;cursor:pointer;transition:all 0.2s;">Reject</button>
@@ -944,10 +944,14 @@ function setCookieConsent(accepted) {
 
 (function() {
   var consent = localStorage.getItem('cookie_consent');
+  var banner = document.getElementById('cookie-banner');
   if (!consent) {
-    document.getElementById('cookie-banner').style.display = 'flex';
-  } else if (consent === 'accepted') {
-    setTimeout(loadChatWidget, 5000);
+    banner.style.display = 'flex';
+  } else {
+    banner.style.display = 'none';
+    if (consent === 'accepted') {
+      setTimeout(loadChatWidget, 5000);
+    }
   }
 })();
 </script>
