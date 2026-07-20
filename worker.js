@@ -27,7 +27,7 @@ export default {
     const isTest = MODE === 'test';
     const STRIPE_SECRET_KEY = isTest ? env.STRIPE_TEST_SECRET_KEY : env.STRIPE_LIVE_SECRET_KEY;
     const PRICE_ID = isTest ? env.STRIPE_TEST_PRICE_ID : env.STRIPE_LIVE_PRICE_ID;
-    const COUPON_ID = isTest ? 'TEST_FIRST_MONTH_1GBP' : 'Ev96h2AE';
+    const COUPON_ID = isTest ? 'TEST_FIRST_MONTH_1GBP' : 'wlMgMHe3';
     const DOMAIN = env.DOMAIN;
     async function stripe(endpoint, body) {
       const response = await fetch(`https://api.stripe.com/v1/${endpoint}`, {
