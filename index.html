@@ -882,6 +882,12 @@ async function startCheckout(e) {
   e.preventDefault();
   const btn = e.currentTarget;
   const original = btn.textContent;
+  gtag('event', 'begin_checkout', {
+    send_to: 'G-F7VH44D1MG',
+    currency: 'GBP',
+    value: 1.00,
+    button_location: btn.classList.contains('btn-full') ? 'pricing' : 'hero'
+  });
   btn.textContent = 'Loading...';
   btn.style.opacity = '0.7';
   btn.style.pointerEvents = 'none';
