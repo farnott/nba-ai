@@ -111,6 +111,7 @@ var sessionId = new URLSearchParams(location.search).get('session_id');
 if (sessionId) {
   // GA4 ecommerce
   gtag('event', 'purchase', {
+    send_to: 'G-F7VH44D1MG',
     currency: 'GBP',
     value: 1.00,
     transaction_id: sessionId
