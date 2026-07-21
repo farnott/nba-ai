@@ -601,18 +601,20 @@ gtag('consent', 'default', {
   analytics_storage: 'denied'
 });
 
+try {
+  if (localStorage.getItem('cookie_consent') === 'accepted') {
+    gtag('consent', 'update', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+  }
+} catch (e) {}
+
 gtag('js', new Date());
 gtag('config', 'G-F7VH44D1MG');
-gtag('config', 'AW-18257259487');  // your Google Ads ID
-
-if (localStorage.getItem('cookie_consent') === 'accepted') {
-  gtag('consent', 'update', {
-    ad_storage: 'granted',
-    ad_user_data: 'granted',
-    ad_personalization: 'granted',
-    analytics_storage: 'granted'
-  });
-}
+gtag('config', 'AW-18257259487');
 </script>
 </head>
 <body>
